@@ -1,8 +1,7 @@
 .tarea-contenedor{
     width: 500px;
     min-height: 65px;
-    background-color: #1b1b32;
-    margin: 5px 0;
+    margin: 5px 0px;
     padding: 8px 15px 8px 20px;
     display: flex;
     justify-content: space-between;
@@ -15,7 +14,7 @@
   /*Colores*/
 
   .tarea-contenedor:nth-child(3n + 1){
-    background-color: #1b1b32;
+    background-color: #3232ee;
   }
   .tarea-contenedor:nth-child(3n + 2){
     background-color: #2a2a40;

@@ -7,15 +7,18 @@ const TareaFormulario = (props) => {
   const [input, setInput] = useState('');
 
   const manejarCambio = e => {
+    //Recibe el evento cuando cambia el texto en el input
     setInput(e.target.value);//Permite extraer el valor del campo de texto que ingreso el usuario
 
   }
 
   const manejarEnvio = e => {
+    //Evento de submit, de envío de formulario
     e.preventDefault();
     console.log("Enviando formulario...")
 
     const tareaNueva = {
+      //Paquete uuid para generar identificadores unicos
       id: uuidv4(),
       texto: input,
       completada:false

@@ -11,7 +11,7 @@
     background-color: white;
     padding: 14px 32px 14px 16px;
     border-radius: 4px 0 0 4px;
-    border: 2px solid #00471b;
+    border: 2px solid #060b28;
     outline: none;
   }
   
@@ -20,12 +20,16 @@
   .tarea-boton{
     padding: 16px;
     font-size: 18px;
-    font-family: Roboto, sans-serif;
-    border: none;
-    border-radius: 0 4px 4px 0;
+    font-family: sans-serif;
+    border-radius:10px;
     cursor: pointer;
     outline: none;
-    background: #00471b;
+    background: #f75555;
     color: white;
     text-transform: capitalize;
+  }
+
+  .tarea-boton:hover{
+    border: none;
+    background: #fb7474;
   }

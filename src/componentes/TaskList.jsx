@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import TareaFormulario from './TareaFormulario';
+import TareaFormulario from './TaskForm';
 import '../hojas-de-estilo/ListaDeTareas.css';
-import Tarea from './Tarea';
+import Tarea from './TaskItem';
 
+//Componente que genera el formulario y las tareas
 const ListaDeTareas = () => {
 
     const [tareas, setTareas] = useState([]);
@@ -14,12 +15,22 @@ const ListaDeTareas = () => {
             const tareasActualizadas = [tarea, ...tareas];
             setTareas(tareasActualizadas)
         }
-    }
+    };
 
     const eliminarTarea = id =>{
-        const tareasActualizadas =tareas.filter(tarea => tarea.id !== id);
+        const tareasActualizadas = tareas.filter(tarea => tarea.id !== id);
         setTareas(tareasActualizadas)
-    }
+    };
+
+    const completarTarea = id => {
+        const tareasActualizadas = tareas.map(tarea =>{
+            if(tarea.id === id){
+                tarea.completada = ! tarea.completada 
+            }
+            return tarea;
+        })
+        setTareas(tareasActualizadas);
+    };
 
     return (
         <>
@@ -32,6 +43,8 @@ const ListaDeTareas = () => {
                             id={tarea.id}
                             texto={tarea.texto}
                             completada={tarea.completada}
+                            completarTarea={completarTarea}
+                            eliminarTarea={eliminarTarea}
                         />
                     )
                 }
